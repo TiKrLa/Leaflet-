@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Leaflet-harjoitus</title>
+<link rel="stylesheet" href="vendor/leaflet.css" />
+<link rel="stylesheet" href="vendor/Leaflet.markercluster-1.4.1/dist/MarkerCluster.css" />
+<link rel="stylesheet" href="vendor/Leaflet.markercluster-1.4.1/dist/MarkerCluster.Default.css" />
+<link rel="stylesheet" href="css/styles.css" />
+<script src="vendor/leaflet.js"></script>
+<script src="vendor/Leaflet.markercluster-1.4.1/dist/leaflet.markercluster.js"></script>
+<script src="vendor/leaflet.markercluster.layersupport.js"></script>
+<script src="leaflet.markercluster.freezable.js"></script>
+
+</head>
+<body>
+
+<div id="loader" class="loader"></div>
+
+<div class="leaflet-container leaflet-control-clustering">
+    <input type="checkbox" id="toggleClustering" checked /> <label for="toggleClustering">Klusterointi</label>
+</div>
+
+<div id="map"></div>
+
+<script src="js/map.js"></script>
+
+</body>
+</html>

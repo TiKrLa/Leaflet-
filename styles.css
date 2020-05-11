@@ -1,0 +1,156 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #ccc;
+}
+
+#map {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.leaflet-control-layers,
+.leaflet-control-zoom a
+.leaflet-control-clustering {
+    background-color: #333;
+    color: #fff;
+}
+
+.leaflet-control-zoom a:hover {
+    background-color: #000;
+    color: #fff;
+}
+
+.leaflet-control-clustering {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: 1;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.leaflet-control-layers {
+    margin-top: 50px !important;
+}
+
+/* My location marker div element */
+.my-location {
+    position: relative;
+}
+
+/* My location pulsating circle*/
+.my-location::before {
+    content: '';
+    display: block;
+    position: absolute;
+    width: 32px;
+    height: 32px;
+    border: 3px solid #06f;
+    border-radius: 50%;
+    animation: pulsate 1.5s ease-in-out infinite;
+}
+
+/* My location center */
+.my-location::after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: -8px;
+    left: -8px;
+    background-color: #06f;
+    width: 12px;
+    height: 12px;
+    border: 2px solid #fff;
+    border-radius: 50%;
+}
+
+.loader {
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 52px;
+    height: 52px;
+    background-color: #333;
+    border-radius: 5px;
+    z-index: 1;
+}
+
+.loader::after {
+    content: '';
+    display: block;
+    width: 32px;
+    height: 32px;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background-image: url('../images/images/icon-loading.svg');
+    animation: spin 1s infinite linear;
+}
+
+.loader.hide {
+    display: none;
+}
+
+input[type="checkbox"] {
+    -webkit-appearance: none;
+    -moz-appearance:none;
+    appearance: none;
+    position: relative;
+    top: 3px;
+    width: 24px;
+    height: 12px;
+    background-color: #666;
+    box-sizing: content-box;
+    padding: 2px;
+    border-radius: 12px;
+    margin: 0;
+    transition: background-color .25s;
+    cursor: pointer;
+}
+
+input[type="checkbox"]:checked {
+    background-color: #07e;
+}
+
+input[type="checkbox"]::before {
+    content: "";
+    display: block;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: #aaa;
+    transition: margin-left .25s, background-color .25s;
+}
+
+input[type="checkbox"]:checked::before {
+    background-color: #fff;
+    margin-left: 12px;
+}
+
+@keyframes pulsate {
+    0% {
+        transform: translate(-50%, -50%) scale(.25);
+        opacity: 1;
+    }
+    100% {
+        transform: translate(-50%, -50%) scale(1.25);
+        opacity: 0;
+    }
+    
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(359deg);
+    }
+}
